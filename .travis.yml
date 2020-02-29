@@ -44,8 +44,9 @@ install:
         conda create -q -n p4env python=$PYTHON_VER psi4 numpy matplotlib jupyter scipy -c psi4/label/dev -c defaults -c conda-forge;
     fi
 
-  - source activate p4env
+  - conda activate p4env
   - conda install pytest pytest-cov codecov -c conda-forge
+  - python setup.py develop
 
 
 script:
